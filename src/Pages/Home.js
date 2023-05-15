@@ -7,7 +7,7 @@ function Home() {
         <br></br>
         <center>
           <img
-            src=""
+            src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzQ3ZWE2YzM5ZDY5MjVjOThiMDVjMDdkOTkxNTg0YjdmOWQyZDk4MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/pJScUQDqugV9e/giphy.gif"
             alt="rock-img"
           ></img>
         </center>
