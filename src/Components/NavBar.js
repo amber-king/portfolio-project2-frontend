@@ -5,12 +5,12 @@ export default function NavBar() {
     <nav>
       <h1>
         {" "}
-        <Link to="/">Rock Dictionary 🗿</Link>{" "}
+       <Link to="/">🗿</Link> {" "}
       </h1>
       <h3>
-        <Link to="/rocks">Rocks 🪨</Link>
+        <Link to="/rocks">Rocks Log 🪨</Link>
       </h3>
-      <button className="">
+      <button>
         <Link to="/rocks/new">New Rock</Link>
       </button>
     </nav>

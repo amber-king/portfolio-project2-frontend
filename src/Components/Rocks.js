@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Rock from "./Rock";
-// const API = process.env.REACT_APP_API_URL;
 
 export default function Rocks() {
   const [rocks, setRocks] = useState([]);
@@ -29,13 +28,15 @@ export default function Rocks() {
       <section>
         <table>
           <thead>
-            <th>Name</th>
-            <th>Element</th>
-            <th>Rock's Location</th>
-            <th>Color</th>
-            <th>Texture</th>
-            <th>Luster</th>
-            <th>Hard or Soft?</th>
+            <tr>
+              <th>Name</th>
+              <th>Element</th>
+              <th>Rock's Location</th>
+              <th>Color</th>
+              <th>Texture</th>
+              <th>Luster</th>
+              <th>Hard or Soft?</th>
+            </tr>
           </thead>
           <tbody>
             {rocks.map((rock) => {

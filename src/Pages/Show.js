@@ -1,10 +1,10 @@
-import RockDetails from "../Components/RockDetail";
+import RockDetail from "../Components/RockDetail";
 
 function Show() {
   return (
     <div className="Show">
-      <h2>Show</h2>
-      <RockDetails />
+      <h2>Your Rock is ⤵️</h2>
+      <RockDetail />
     </div>
   );
 }

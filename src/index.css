@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-family: fantasy;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #B9B9B9;
+  background-color: #b9b9b9;
 }
 
 code {
@@ -65,3 +65,12 @@ a:hover {
   color: lightgray;
 }
 
+/* .New form{
+
+} */
+
+.rockNavigation {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
