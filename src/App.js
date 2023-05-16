@@ -26,7 +26,7 @@ function App() {
             <Route path="/rocks/:id/edit" element={<Edit />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
-          ``
+          
         </main>
       </Router>
     </div>
