@@ -1,4 +1,24 @@
-# Getting Started with Create React App
+ Rock Search ->
+-user will be able to see a list of rocks(rock id; rock element[igneous, sedimentary, metamorphic], rock size[small, medium,large,x-large]; rock location[where was it found];rock texture[The six main types of textures are phaneritic, aphanitic, porphyritic, glassy, pyroclastic, and pegmatitic.], rock color[breif summary of color], rock luster [Luster
+Luster is how a mineral reflects light. The terms metallic and nonmetallic describe the basic types of luster. Table 7 lists the most common terms used to describe luster and an example of a corresponding mineral. Some minerals that don't exhibit luster are referred to as "earthy," "chalky," or "dull."])
+-add a rock to the list
+-delete a rock
+-edit a rock on the list 
+-show a full list of rocks(/rocks) & can click the rock to see details of the rock(rocks/:id)
+
+
+Netlify Frontend Link -> https://rock-dictionary-log.netlify.app/
+Render Backend -> 
+Trello Workflow Board Link -> https://trello.com/b/3iyMDDAv/rock-searchportfolio-proj
+Backend Github Repo Link ->https://github.com/amber-king/portfolio-project2-backend
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +87,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
