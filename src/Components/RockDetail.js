@@ -20,14 +20,12 @@ export default function RockDetail() {
 
   return (
     <article className="Rock-Detail">
-      <strong>
-        <h2>
-          {rockList.hardness ? <span>🪨</span> : <span>☁️</span>}{" "}
-          {rockList.name}
-        </h2>
-      </strong>
-      <span>
-        <center>
+      <h1>
+        {rockList.hardness ? <span>🪨</span> : <span>☁️</span>} {rockList.name}
+      </h1>
+      <hr></hr>
+   
+        <span>
           {" "}
           <h4>
             Element: {rockList.element}
@@ -41,8 +39,9 @@ export default function RockDetail() {
             Luster: {rockList.luster}
             <br></br>
           </h4>
-        </center>
-      </span>
+        </span>
+    
+
       <center>
         <div className="rockNavigation">
           <Link to={`/rocks`}>

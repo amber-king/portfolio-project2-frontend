@@ -2,8 +2,24 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Rock from "./Rock";
 
+function filterElements(search, element) {
+  return element.filter((element) => {
+    return element.element.toLowerCase().includes(search.toLowerCase());
+  });
+}
+
 export default function Rocks() {
   const [rocks, setRocks] = useState([]);
+  const [element, setElement] = useState([]);
+
+  function handleElementChange(event) {
+    setElement(event.target.value);
+    const result = event.target.value.length
+      ? filterElements(event.target.value, rocks)
+      : rocks;
+  
+setRocks(result);
+  }
 
   useEffect(() => {
     axios
@@ -16,15 +32,22 @@ export default function Rocks() {
       });
   }, []);
 
-  //   filter /sort feature here --v
-
   return (
     <div className="Rocks">
       <h3>
         <center>All Rocks</center>
+        <hr></hr>
       </h3>
       {/* Sort hook will be here  */}
-
+      <label htmlFor="setElement">
+        Search by Element:
+        <input
+          type="text"
+          value={element}
+          id="setElement"
+          onChange={handleElementChange}
+        />
+      </label>
       <section>
         <table>
           <thead>
@@ -38,6 +61,8 @@ export default function Rocks() {
               <th>Hard or Soft?</th>
             </tr>
           </thead>
+          
+
           <tbody>
             {rocks.map((rock) => {
               return <Rock key={rock.id} rock={rock} />;
