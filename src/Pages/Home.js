@@ -1,3 +1,4 @@
+// TODO ->http://localhost:3000/ -> welcome home page w/ nav bar links in header
 function Home() {
     return (
       <div className="Home">

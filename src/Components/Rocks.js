@@ -1,7 +1,10 @@
+// TODO: http://localhost:3000/rocks -> connects to the rocks log/index page
+
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Rock from "./Rock";
 
+// filter of element type for the rocks
 function filterElements(search, element) {
   return element.filter((element) => {
     return element.element.toLowerCase().includes(search.toLowerCase());
@@ -9,18 +12,20 @@ function filterElements(search, element) {
 }
 
 export default function Rocks() {
-  const [rocks, setRocks] = useState([]);
-  const [element, setElement] = useState([]);
+  const [rocks, setRocks] = useState([]); // state to help show all rocks
+  const [element, setElement] = useState([]); // state to help filter element of rocks
 
+  // handle change to allow user to search for rock by element via a search engine
   function handleElementChange(event) {
     setElement(event.target.value);
     const result = event.target.value.length
       ? filterElements(event.target.value, rocks)
       : rocks;
-  
-setRocks(result);
+
+    setRocks(result);
   }
 
+  // the effect that fetches all rock index to display on index page
   useEffect(() => {
     axios
       .get(`http://localhost:7777/rocks`)
@@ -38,7 +43,7 @@ setRocks(result);
         <center>All Rocks</center>
         <hr></hr>
       </h3>
-      {/* Sort hook will be here  */}
+      {/* Filter by element search engine */}
       <label htmlFor="setElement">
         Search by Element:
         <input
@@ -61,7 +66,6 @@ setRocks(result);
               <th>Hard or Soft?</th>
             </tr>
           </thead>
-          
 
           <tbody>
             {rocks.map((rock) => {

@@ -1,3 +1,4 @@
+// TODO: -> http://localhost:3000/; navbar w/ home link, index log & new rock form button
 import { Link } from "react-router-dom";
 
 export default function NavBar() {

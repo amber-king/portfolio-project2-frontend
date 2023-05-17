@@ -1,4 +1,4 @@
-//TODO: /rocks -> 
+//TODO: http://localhost:3000/rocks -> connects to rock index page display
 import { Link } from "react-router-dom";
 
 export default function Rock({ rock }) {

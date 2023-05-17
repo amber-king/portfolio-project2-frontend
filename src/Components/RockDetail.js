@@ -1,3 +1,4 @@
+// TODO: http://localhost:3000/rocks/${id} -> displays rock details the user selects
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -20,14 +21,17 @@ export default function RockDetail() {
 
   return (
     <article className="Rock-Detail">
-      <h1>
+     
+        <h1>
         {rockList.hardness ? <span>🪨</span> : <span>☁️</span>} {rockList.name}
       </h1>
+           
       <hr></hr>
    
         <span>
           {" "}
-          <h4>
+          <center>
+             <h4>
             Element: {rockList.element}
             <br></br>
             Rock's Location: {rockList.where_found}
@@ -39,8 +43,12 @@ export default function RockDetail() {
             Luster: {rockList.luster}
             <br></br>
           </h4>
+          </center>
+         
         </span>
     
+  
+     
 
       <center>
         <div className="rockNavigation">
