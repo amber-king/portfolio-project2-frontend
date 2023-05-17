@@ -1,8 +1,6 @@
+// TODO: http://localhost:3000/rocks/${id}/edit -> allows user to edit selected rock after clicking edit button
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
-
-
 
 export default function RockEditForm() {
   let { id } = useParams();
@@ -42,7 +40,7 @@ export default function RockEditForm() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:7777/rocks/${id}`)
+    fetch(`http://localhost:7777/rocks/${id}/`)
       .then((response) => response.json())
       .then((response) => {
         setChangedRock(response);
