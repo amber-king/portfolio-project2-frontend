@@ -1,22 +1,39 @@
- Rock Search ->
--user will be able to see a list of rocks(rock id; rock element[igneous, sedimentary, metamorphic], rock size[small, medium,large,x-large]; rock location[where was it found];rock texture[The six main types of textures are phaneritic, aphanitic, porphyritic, glassy, pyroclastic, and pegmatitic.], rock color[breif summary of color], rock luster [Luster
-Luster is how a mineral reflects light. The terms metallic and nonmetallic describe the basic types of luster. Table 7 lists the most common terms used to describe luster and an example of a corresponding mineral. Some minerals that don't exhibit luster are referred to as "earthy," "chalky," or "dull."])
--add a rock to the list
--delete a rock
--edit a rock on the list 
--show a full list of rocks(/rocks) & can click the rock to see details of the rock(rocks/:id)
+# Rock Dictionary_9.3 🪨
 
+### <strong>Netlify Frontend Link</strong> -> https://rock-dictionary-log.netlify.app/
 
-Netlify Frontend Link -> https://rock-dictionary-log.netlify.app/
-Render Backend -> 
-Trello Workflow Board Link -> https://trello.com/b/3iyMDDAv/rock-searchportfolio-proj
-Backend Github Repo Link ->https://github.com/amber-king/portfolio-project2-backend
+### <strong>Render Backend Link</strong> -> https://portfolio-project2-backend.onrender.com
 
+### <strong>Trello Workflow Board Link</strong> -> https://trello.com/b/3iyMDDAv/rock-searchportfolio-proj
 
+### <strong>Backend Github Repo Link</strong> ->https://github.com/amber-king/portfolio-project2-backend
 
+<hr>
 
+### This application is meant to allow user to discovery and edit different types of rocks. The user will be able to see:
 
+- user will be able to see a list of rocks including the following data ⤵️
+  <br>
+  🪨 rock name
+  <br>
+  🪨 rock element
+  <br>
+  🪨 rock location (where_found)
+  <br>
+  🪨 rock color
+  <br>
+  🪨 rock texture
+  <br>
+  🪨 rock luster
+  <br>
+  🪨 hardness (is the rock soft or hard)
+  <br>
 
+- user can add a rock to the list(needs work)
+- user can delete a rock
+- user can edit a rock on the list(needs work)
+- user can select a rock to see details of the rock(rocks/:id)
+- user can search for rock by it's element via a search engine on the rock log page
 
 <!-- # Getting Started with Create React App
 
