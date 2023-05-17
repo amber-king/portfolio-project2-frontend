@@ -79,3 +79,28 @@ a:hover {
   text-align: center;
 }
 
+/* Media queries */
+
+/* 768px to 1279px--v */
+@media (max-width: 768px) and (max-width: 1279px) {
+  main {
+    width: 677.6875px;
+    /* display:none; */
+  }
+}
+
+/* 1280px--v */
+@media (min-width: 1280px) {
+  main {
+    width: 885.5px;
+    /* display:block; */
+  }
+}
+
+/* 767px--v */
+@media (max-width: 767px) {
+  main {
+    width: 324px;
+    grid-template-columns: 1fr;
+  }
+}
