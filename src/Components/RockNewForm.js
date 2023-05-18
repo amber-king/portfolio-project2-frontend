@@ -75,7 +75,7 @@ export default function RockNewForm() {
           value={newRock.color}
           type="text"
           onChange={handleRockTextChange}
-          placeholder="Best description pf Rock Color"
+          placeholder="Best description of Rock Color"
         />
         <label htmlFor="texture">Textture:</label>
         <input
@@ -92,7 +92,7 @@ export default function RockNewForm() {
           type="text"
           onChange={handleRockTextChange}
           placeholder="Is the rock dull or not?...."
-          required
+          
         />
         <label htmlFor="hardness">Hard🪨 = ✅ or Soft☁️ = No Check:</label>
         <input
