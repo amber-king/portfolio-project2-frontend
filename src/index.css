@@ -112,14 +112,6 @@ input[type="submit"] {
   }
 }
 
-/* 1280px--v
-@media (min-width: 1280px) {
-  main {
-    width: 885.5px;
-    display:block;
-  }
-} */
-
 /* 767px--v */
 @media (max-width: 767px) {
   .Edit, .New {
