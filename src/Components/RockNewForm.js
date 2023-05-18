@@ -15,20 +15,16 @@ export default function RockNewForm() {
     hardness: false,
   });
 
-  const newAddedRock = (addedRock) => {
-    const method = {
+  // similiar to PUT async/await fetch method in edit forms but for POST/add a rock feature
+  const newAddedRock = async (addedRock) => {
+    const result = await fetch(`http://localhost:7777/rocks/`, {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addedRock),
-      header: { "Content-Type": "application/json" },
-    };
-    return fetch(`http://localhost:7777/rocks/`, method)
-      .then((response) => response.json())
-      .then((response) => {
-        navigate(`/rocks/${response.id}`);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
+    if (result.ok) {
+      navigate(`/rocks`);
+    }
   };
   const handleRockTextChange = (event) => {
     setNewRock({ ...newRock, [event.target.id]: event.target.value });
@@ -38,9 +34,10 @@ export default function RockNewForm() {
     setNewRock({ ...newRock, hardness: !newRock.hardness });
   };
 
+//   when placing the POST feature onto the SUBMIT , set the post to the state for a new rock/new added data
   const handleRockSubmit = (event) => {
     event.preventDefault();
-    newAddedRock();
+    newAddedRock(newRock);
   };
 
   return (

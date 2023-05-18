@@ -16,11 +16,15 @@ export default function RockEditForm() {
     hardness: false,
   });
 
+  // PUT request using fetch with async/await
+  // This sends the same PUT request using fetch, but this version uses an async function and the await javascript expression to wait for the promises to return (instead of using the promise then() method).
+  // Helper Source -v
+  // https://jasonwatmore.com/post/2021/09/20/fetch-http-put-request-examples#:~:text=PUT%20request%20using%20fetch%20with,then()%20method%20as%20above).
   const updateRock = async (updatedRock) => {
     const response = await fetch(`http://localhost:7777/rocks/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedRock)
+      body: JSON.stringify(updatedRock),
     });
     if (response.ok) {
       navigate(`/rocks/${id}`);
