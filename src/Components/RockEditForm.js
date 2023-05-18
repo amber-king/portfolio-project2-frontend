@@ -19,20 +19,12 @@ export default function RockEditForm() {
   const updateRock = async (updatedRock) => {
     const response = await fetch(`http://localhost:7777/rocks/${id}`, {
       method: "PUT",
-      body: JSON.stringify(updatedRock),
-      header: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedRock)
     });
     if (response.ok) {
       navigate(`/rocks/${id}`);
     }
-    // return fetch(`http://localhost:7777/rocks/${id}`, method)
-    //   .then((response) => response.json())
-    //   .then((response) => {
-    //     navigate(`/rocks/${id}`);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   };
   const handleRockTextChange = (event) => {
     setChangedRock({ ...changedRock, [event.target.id]: event.target.value });
@@ -56,7 +48,7 @@ export default function RockEditForm() {
 
   const handleRockSubmit = (event) => {
     event.preventDefault();
-    updateRock(changedRock, id);
+    updateRock(changedRock);
   };
 
   return (
