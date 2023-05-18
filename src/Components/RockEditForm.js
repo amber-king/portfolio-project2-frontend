@@ -40,7 +40,7 @@ export default function RockEditForm() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:7777/rocks/${id}/`)
+    fetch(`http://localhost:7777/rocks/${id}`)
       .then((response) => response.json())
       .then((response) => {
         setChangedRock(response);
@@ -121,7 +121,7 @@ export default function RockEditForm() {
         <input type="submit" />
       </form>
       <Link to={`/rocks/${id}`}>
-        <button>Nevermind!</button>
+        <center><button>Nevermind!</button></center>
       </Link>
     </div>
   );

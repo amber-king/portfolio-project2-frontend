@@ -35,7 +35,7 @@ a {
   color: black;
 }
 button a {
-  color: black;
+  color: darkorchid;
 }
 
 h4 {
@@ -62,12 +62,35 @@ tbody tr:nth-child(even) {
   background: gray;
 }
 a:hover {
-  color: lightgray;
+  color: darkslateblue;
 }
 
-/* .New form{
+.New {
+  border: 7px double darkturquoise;
+    margin: auto;
+    width: 95%;
+}
 
-} */
+.New form {
+  margin: auto;
+  width: 95%;
+}
+
+.Edit, .New input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: 15%;
+}
+
+input[type="submit"] {
+  width: 5%;
+}
 
 .rockNavigation {
   display: flex;
@@ -82,24 +105,24 @@ a:hover {
 /* Media queries */
 
 /* 768px to 1279px--v */
-@media (max-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (min-width: 1279px) {
   main {
     width: 677.6875px;
-    /* display:none; */
+    display:none;
   }
 }
 
-/* 1280px--v */
+/* 1280px--v
 @media (min-width: 1280px) {
   main {
     width: 885.5px;
-    /* display:block; */
+    display:block;
   }
-}
+} */
 
 /* 767px--v */
 @media (max-width: 767px) {
-  main {
+  .Edit, .New {
     width: 324px;
     grid-template-columns: 1fr;
   }
