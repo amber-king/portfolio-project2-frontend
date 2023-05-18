@@ -2,7 +2,7 @@
 
 ### <strong>Netlify Frontend Link</strong> -> https://rock-dictionary-log.netlify.app/
 
-### <strong>Render Backend Link</strong> -> https://portfolio-project2-backend.onrender.com
+<!-- ### <strong>Render Backend Link</strong> -> https://portfolio-project2-backend.onrender.com RENDER MINUTE LIMIT REACHED< DEPLOY SITE NEVER WORKED-->
 
 ### <strong>Trello Workflow Board Link</strong> -> https://trello.com/b/3iyMDDAv/rock-searchportfolio-proj
 
