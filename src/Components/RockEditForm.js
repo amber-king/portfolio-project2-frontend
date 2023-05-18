@@ -16,20 +16,23 @@ export default function RockEditForm() {
     hardness: false,
   });
 
-  const updateRock = (updatedRock, id) => {
-    const method = {
+  const updateRock = async (updatedRock) => {
+    const response = await fetch(`http://localhost:7777/rocks/${id}`, {
       method: "PUT",
       body: JSON.stringify(updatedRock),
       header: { "Content-Type": "application/json" },
-    };
-    return fetch(`http://localhost:7777/rocks/${id}`, method)
-      .then((response) => response.json())
-      .then((response) => {
-        navigate(`/rocks/${id}`);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
+    if (response.ok) {
+      navigate(`/rocks/${id}`);
+    }
+    // return fetch(`http://localhost:7777/rocks/${id}`, method)
+    //   .then((response) => response.json())
+    //   .then((response) => {
+    //     navigate(`/rocks/${id}`);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
   const handleRockTextChange = (event) => {
     setChangedRock({ ...changedRock, [event.target.id]: event.target.value });
@@ -44,6 +47,7 @@ export default function RockEditForm() {
       .then((response) => response.json())
       .then((response) => {
         setChangedRock(response);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -107,7 +111,6 @@ export default function RockEditForm() {
           type="text"
           onChange={handleRockTextChange}
           placeholder="Is the rock dull or not?...."
-          required
         />
         <label htmlFor="hardness">Hard = ✅ or Soft = No Check:</label>
         <input
@@ -121,7 +124,9 @@ export default function RockEditForm() {
         <input type="submit" />
       </form>
       <Link to={`/rocks/${id}`}>
-        <center><button>Nevermind!</button></center>
+        <center>
+          <button>Nevermind!</button>
+        </center>
       </Link>
     </div>
   );
