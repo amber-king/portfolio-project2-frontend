@@ -34,7 +34,7 @@ export default function RockEditForm() {
     setChangedRock({ ...changedRock, [event.target.id]: event.target.value });
   };
 
-  const handleHardnessCheckboxChange = () => {
+  const handleHardnessCheckboxChange = (event) => {
     setChangedRock({ ...changedRock, hardness: !changedRock.hardness });
   };
 

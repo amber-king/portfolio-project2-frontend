@@ -30,8 +30,8 @@ export default function RockNewForm() {
     setNewRock({ ...newRock, [event.target.id]: event.target.value });
   };
 
-  const handleHardnessCheckboxChange = (event) => {
-    setNewRock({ ...newRock, hardness: event.target.checked });
+  const handleHardnessCheckboxChange = () => {
+    setNewRock({ ...newRock, hardness: !newRock.hardness });
   };
 
 //   when placing the POST feature onto the SUBMIT , set the post to the state for a new rock/new added data
