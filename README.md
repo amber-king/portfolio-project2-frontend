@@ -29,9 +29,9 @@
   🪨 hardness (is the rock soft or hard)
   <br>
 
-- user can add a rock to the list(needs work)
+- user can add a rock to the list
 - user can delete a rock
-- user can edit a rock on the list(needs work)
+- user can edit a rock on the list
 - user can select a rock to see details of the rock(rocks/:id)
 - user can search for rock by it's element via a search engine on the rock log page
 
