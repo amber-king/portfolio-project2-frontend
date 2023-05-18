@@ -3,7 +3,7 @@ body {
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #b9b9b9;
+  background-image: linear-gradient(to right, #decba4, #3e5151);
 }
 
 code {
@@ -67,8 +67,8 @@ a:hover {
 
 .New {
   border: 7px double darkturquoise;
-    margin: auto;
-    width: 95%;
+  margin: auto;
+  width: 95%;
 }
 
 .New form {
@@ -76,7 +76,8 @@ a:hover {
   width: 95%;
 }
 
-.Edit, .New input[type],
+.Edit,
+.New input[type],
 textarea {
   display: block;
   width: 90%;
@@ -108,13 +109,14 @@ input[type="submit"] {
 @media (min-width: 768px) and (min-width: 1279px) {
   main {
     width: 677.6875px;
-    display:none;
+    display: none;
   }
 }
 
 /* 767px--v */
 @media (max-width: 767px) {
-  .Edit, .New {
+  .Edit,
+  .New {
     width: 324px;
     grid-template-columns: 1fr;
   }
