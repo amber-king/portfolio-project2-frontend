@@ -12,7 +12,7 @@
 
 ### This application is meant to allow user to discovery and edit different types of rocks. The user will be able to see:
 
-- user will be able to see a list of rocks including the following data ⤵️
+- a list of rocks including the following data ⤵️
   <br>
   🪨 rock name
   <br>
