@@ -23,7 +23,9 @@ export default function Rocks() {
       ? filterElements(event.target.value, rocks)
       : rocks;
 
-    setRocks(result);
+    setRocks(result) 
+ 
+    
   }
 
 
@@ -53,6 +55,7 @@ export default function Rocks() {
           value={element}
           id="setElement"
           onChange={handleElementChange}
+          placeholder="What is the Rock Element?"
         />
       </label>
       <section>
