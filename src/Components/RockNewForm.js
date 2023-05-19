@@ -34,7 +34,7 @@ export default function RockNewForm() {
     setNewRock({ ...newRock, hardness: !newRock.hardness });
   };
 
-//   when placing the POST feature onto the SUBMIT , set the post to the state for a new rock/new added data
+  //   when placing the POST feature onto the SUBMIT , set the post to the state for a new rock/new added data
   const handleRockSubmit = (event) => {
     event.preventDefault();
     newAddedRock(newRock);
@@ -77,7 +77,7 @@ export default function RockNewForm() {
           onChange={handleRockTextChange}
           placeholder="Best description of Rock Color"
         />
-        <label htmlFor="texture">Textture:</label>
+        <label htmlFor="texture">Texture:</label>
         <input
           id="texture"
           value={newRock.texture}
@@ -92,16 +92,13 @@ export default function RockNewForm() {
           type="text"
           onChange={handleRockTextChange}
           placeholder="Is the rock dull or not?...."
-          
         />
-        <label htmlFor="hardness">Hard🪨 = ✅ or Soft☁️ = No Check:</label>
-        <input
-          id="hardness"
-          value={newRock.hardness}
-          type="checkbox"
-          onChange={handleHardnessCheckboxChange}
-          checked={newRock.hardness}
-        />
+        <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
+        <select id="hardness" value={newRock} onChange={handleHardnessCheckboxChange}>
+          <option value="Hard">🪨</option>
+          <option value="Soft">☁️</option>
+        </select>
+       
         <br />
         <input type="submit" />
       </form>

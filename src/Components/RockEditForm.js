@@ -108,14 +108,11 @@ export default function RockEditForm() {
           onChange={handleRockTextChange}
           placeholder="Is the rock dull or not?...."
         />
-        <label htmlFor="hardness">Hard = ✅ or Soft = No Check:</label>
-        <input
-          id="hardness"
-          value={changedRock.hardness}
-          type="checkbox"
-          onChange={handleHardnessCheckboxChange}
-          checked={changedRock.hardness}
-        />
+         <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
+        <select id="hardness" value={changedRock} onChange={handleHardnessCheckboxChange}>
+          <option value="Hard">🪨</option>
+          <option value="Soft">☁️</option>
+        </select>
         <br />
         <input type="submit" />
       </form>

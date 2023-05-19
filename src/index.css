@@ -1,6 +1,7 @@
 /* Design Sources --v */
 /* https://www.makeuseof.com/css-background-gradients/ -> for body background ideas */
 /* https://blog.hubspot.com/website/web-safe-html-css-fonts#html-and-css-fonts -> font-family ideas */
+/* https://www.jotform.com/help/118-how-to-customize-the-submit-button-with-css/ -> css button sources  */
 
 body {
   margin: 0;
@@ -69,7 +70,7 @@ a:hover {
   color: darkslateblue;
 }
 
-.home-index{
+.home-index {
   width: 100px;
   height: 100px;
 
@@ -79,6 +80,17 @@ a:hover {
 .home-index:hover {
   width: 100px;
   height: 100px;
+  transform: rotate(180deg);
+}
+.new-btn {
+  width: 100px;
+  height: 50px;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.new-btn:hover {
+  width: 100px;
+  height: 50px;
   transform: rotate(180deg);
 }
 .New {
@@ -102,11 +114,15 @@ textarea {
 
 input[type="checkbox"] {
   margin: 0;
-  width: 15%;
+  width: 0%;
 }
 
 input[type="submit"] {
   width: 5%;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px;
+  text-shadow: none;
 }
 
 .rockNavigation {
@@ -119,10 +135,18 @@ input[type="submit"] {
   text-align: center;
 }
 
+button {
+  background-color: transparent;
+
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px;
+  text-shadow: none;
+}
 /* Media queries */
 
 /* 768px to 1279px--v */
-@media (min-width: 768px) and (min-width: 1279px) {
+@media (min-width: 768px) and (min-width: 1300px) {
   main {
     width: 677.6875px;
     display: none;

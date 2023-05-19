@@ -8,9 +8,9 @@ export default function NavBar() {
         <Link to="/">🗿</Link> | <Link to="/rocks">Rocks Log 🪨</Link>
       </h1>
 
-      <button className="new-btn">
-        <Link to="/rocks/new">New Rock</Link>
-      </button>
+      <h1 className="new-btn">
+        <Link to="/rocks/new">New 🪨</Link>
+      </h1>
     </nav>
   );
 }
