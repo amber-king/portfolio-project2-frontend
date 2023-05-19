@@ -1,6 +1,10 @@
+/* Design Sources --v */
+/* https://www.makeuseof.com/css-background-gradients/ -> for body background ideas */
+/* https://blog.hubspot.com/website/web-safe-html-css-fonts#html-and-css-fonts -> font-family ideas */
+
 body {
   margin: 0;
-  font-family: monospace;
+  font-family: Comic Sans MS;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to right, #decba4, #3e5151);
@@ -65,6 +69,18 @@ a:hover {
   color: darkslateblue;
 }
 
+.home-index{
+  width: 100px;
+  height: 100px;
+
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.home-index:hover {
+  width: 100px;
+  height: 100px;
+  transform: rotate(180deg);
+}
 .New {
   border: 7px double darkturquoise;
   margin: auto;

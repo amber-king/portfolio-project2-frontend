@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <nav>
-      <h1>
+      <h1 className="home-index">
         <Link to="/">🗿</Link> | <Link to="/rocks">Rocks Log 🪨</Link>
       </h1>
 
-      <button>
+      <button className="new-btn">
         <Link to="/rocks/new">New Rock</Link>
       </button>
     </nav>
