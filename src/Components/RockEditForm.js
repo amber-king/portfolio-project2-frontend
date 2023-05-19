@@ -110,6 +110,7 @@ export default function RockEditForm() {
         />
          <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
         <select id="hardness" value={changedRock} onChange={handleHardnessCheckboxChange}>
+       
           <option value="Hard">🪨</option>
           <option value="Soft">☁️</option>
         </select>

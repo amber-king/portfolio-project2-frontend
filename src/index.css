@@ -2,6 +2,9 @@
 /* https://www.makeuseof.com/css-background-gradients/ -> for body background ideas */
 /* https://blog.hubspot.com/website/web-safe-html-css-fonts#html-and-css-fonts -> font-family ideas */
 /* https://www.jotform.com/help/118-how-to-customize-the-submit-button-with-css/ -> css button sources  */
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_transform -> transform & hover settings for navbar links */
+/* https://www.w3schools.com/howto/howto_css_custom_checkbox.asp -> custom checbox help */
+/* https://www.geeksforgeeks.org/css3-media-query-for-all-devices/# -> media query settings */
 
 body {
   margin: 0;
@@ -73,7 +76,6 @@ a:hover {
 .home-index {
   width: 100px;
   height: 100px;
-
   transition: width 2s, height 2s, transform 2s;
 }
 
@@ -146,15 +148,14 @@ button {
 /* Media queries */
 
 /* 768px to 1279px--v */
-@media (min-width: 768px) and (min-width: 1300px) {
+@media screen and (max-width: 768px) and (max-width: 1024px) {
   main {
     width: 677.6875px;
-    display: none;
   }
 }
 
 /* 767px--v */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Edit,
   .New {
     width: 324px;

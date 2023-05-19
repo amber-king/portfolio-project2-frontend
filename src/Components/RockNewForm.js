@@ -95,6 +95,7 @@ export default function RockNewForm() {
         />
         <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
         <select id="hardness" value={newRock} onChange={handleHardnessCheckboxChange}>
+         
           <option value="Hard">🪨</option>
           <option value="Soft">☁️</option>
         </select>
