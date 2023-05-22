@@ -1,7 +1,7 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// PAGES
+// PAGES -> connects to Components folder for display 
 import Edit from "./Pages/Edit";
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";

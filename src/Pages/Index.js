@@ -1,3 +1,4 @@
+// TODO: http://localhost:3000/rocks -> shows the log of rocks w/ the search by element filter
 import Rocks from "../Components/Rocks";
 
 function Index() {
