@@ -1,33 +1,27 @@
 // TODO: http://localhost:3000/rocks -> connects to the rocks log/index page
-// ? Filter Note -> person must refresh the page in order to search a new element 
+// ? Filter Note -> person must refresh the page in order to search a new element
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Rock from "./Rock";
 
-// filter of element type for the rocks
-function filterElements(search, element) {
-  return element.filter((element) => {
-    return element.element.toLowerCase().includes(search.toLowerCase());
-  });
-}
-
 export default function Rocks() {
   const [rocks, setRocks] = useState([]); // state to help show all rocks
   const [element, setElement] = useState([]); // state to help filter element of rocks
-
+  // filter of element type for the rocks
+  function filterElements(search, element) {
+    return element.filter((element) => {
+      return element.element.toLowerCase().includes(search.toLowerCase());
+    });
+  }
   // handle change to allow user to search for rock by element via a search engine
   function handleElementChange(event) {
-    
     setElement(event.target.value);
     const result = event.target.value.length
       ? filterElements(event.target.value, rocks)
       : rocks;
 
-    setRocks(result) 
- 
-    
+    setRocks(result);
   }
-
 
   // the effect that fetches all rock index to display on index page
   useEffect(() => {
