@@ -52,7 +52,7 @@ export default function RockEditForm() {
 
   const handleRockSubmit = (event) => {
     event.preventDefault();
-    updateRock(changedRock);
+    updateRock(changedRock); // hook PUT request onto state being modified to see changed on Submit
   };
 
   return (
@@ -90,7 +90,7 @@ export default function RockEditForm() {
           value={changedRock.color}
           type="text"
           onChange={handleRockTextChange}
-          placeholder="Best description pf Rock Color"
+          placeholder="Best description of Rock Color"
         />
         <label htmlFor="texture">Textture:</label>
         <input

@@ -7,6 +7,7 @@ import Rock from "./Rock";
 export default function Rocks() {
   const [rocks, setRocks] = useState([]); // state to help show all rocks
   const [element, setElement] = useState([]); // state to help filter element of rocks
+  
   // filter of element type for the rocks
   function filterElements(search, element) {
     return element.filter((element) => {

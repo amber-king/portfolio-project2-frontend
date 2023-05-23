@@ -20,6 +20,9 @@ export default function RockDetail() {
       });
   }, [id]);
 
+  // DELETE handle to remove a rock from the index & navigates you back to the rock index; /rocks
+  // https://jasonwatmore.com/post/2020/11/11/react-fetch-http-delete-request-examples
+  // This sends an HTTP DELETE request to the JSONPlaceholder api which is a fake online REST api that includes a /posts/:id route that responds to DELETE requests with a HTTP response. When the response is received the React component displays the status message 'Delete successful'.
   function handleRockDelete(id) {
     return fetch(`http://localhost:7777/rocks/${id}`, { method: "DELETE" })
       .then(() => {

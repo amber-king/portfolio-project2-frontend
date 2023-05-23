@@ -73,6 +73,7 @@ a:hover {
   color: darkslateblue;
 }
 
+/* Hover tansformations - when the user hovers over navbar links they will spin upside down */
 .home-index {
   width: 100px;
   height: 100px;
