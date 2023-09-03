@@ -1,6 +1,7 @@
 // TODO: http://localhost:3000/rocks/${id}/edit -> allows user to edit selected rock after clicking edit button
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import rocksData from "../rocksData";
 
 export default function RockEditForm() {
   let { id } = useParams();
@@ -16,43 +17,61 @@ export default function RockEditForm() {
     hardness: false,
   });
 
+  useEffect(() => {
+    const fetchRockData = async () => {
+      try {
+        const response = await fetch(`http://localhost:7777/rocks/${id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setChangedRock(data);
+        } else {
+          const mockRock = rocksData.find(
+            (mockRock) => mockRock.id === parseInt(id)
+          );
+          if (mockRock) {
+            setChangedRock(mockRock);
+          } else {
+            console.error("Rock not found in mock data.");
+          }
+        }
+      } catch (error) {
+        console.log("Error fetching rock data - no backend present:", error);
+      }
+    };
+    fetchRockData();
+  }, [id]);
+
+  const handleRockTextChange = (event) => {
+    setChangedRock({ ...changedRock, [event.target.name]: event.target.value });
+  };
+
+  const handleHardnessCheckboxChange = (event) => {
+    setChangedRock({ ...changedRock, hardness: !changedRock["hardness"] });
+  };
+
   // PUT request using fetch with async/await
   // This sends the same PUT request using fetch, but this version uses an async function and the await javascript expression to wait for the promises to return (instead of using the promise then() method).
   // Helper Source -v
   // https://jasonwatmore.com/post/2021/09/20/fetch-http-put-request-examples#:~:text=PUT%20request%20using%20fetch%20with,then()%20method%20as%20above).
   const updateRock = async (updatedRock) => {
-    const response = await fetch(`http://localhost:7777/rocks/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedRock),
-    });
-    if (response.ok) {
-      navigate(`/rocks/${id}`);
+    try {
+      const response = await fetch(`http://localhost:7777/rocks/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedRock),
+      });
+      if (response.ok) {
+        navigate(`/rocks/${id}`);
+      } else {
+        console.error("Error updating rock on the server:", response.status);
+      }
+    } catch (error) {
+      console.error("Error updating rock:", error);
     }
   };
-  const handleRockTextChange = (event) => {
-    setChangedRock({ ...changedRock, [event.target.id]: event.target.value });
-  };
-
-  const handleHardnessCheckboxChange = (event) => {
-    setChangedRock({ ...changedRock, hardness: !changedRock.hardness });
-  };
-
-  useEffect(() => {
-    fetch(`http://localhost:7777/rocks/${id}`)
-      .then((response) => response.json())
-      .then((response) => {
-        setChangedRock(response);
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [id]);
-
   const handleRockSubmit = (event) => {
     event.preventDefault();
-    updateRock(changedRock); // hook PUT request onto state being modified to see changed on Submit
+    updateRock(changedRock);
   };
 
   return (
@@ -108,9 +127,12 @@ export default function RockEditForm() {
           onChange={handleRockTextChange}
           placeholder="Is the rock dull or not?...."
         />
-         <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
-        <select id="hardness" value={changedRock} onChange={handleHardnessCheckboxChange}>
-       
+        <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
+        <select
+          id="hardness"
+          value={changedRock}
+          onChange={handleHardnessCheckboxChange}
+        >
           <option value="Hard">🪨</option>
           <option value="Soft">☁️</option>
         </select>

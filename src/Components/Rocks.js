@@ -3,11 +3,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Rock from "./Rock";
+import rocksData from "../rocksData";
 
 export default function Rocks() {
   const [rocks, setRocks] = useState([]); // state to help show all rocks
   const [element, setElement] = useState([]); // state to help filter element of rocks
-  
+
   // filter of element type for the rocks
   function filterElements(search, element) {
     return element.filter((element) => {
@@ -33,6 +34,8 @@ export default function Rocks() {
       })
       .catch((error) => {
         console.warn("catch", error);
+        // if no backend local server present - display mock data of rocks
+        setRocks(rocksData);
       });
   }, []);
 
