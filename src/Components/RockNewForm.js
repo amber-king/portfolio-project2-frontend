@@ -1,7 +1,7 @@
 // TODO: http://localhost:3000/rocks/new-> shows new form for user to add a rock;needs work
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import rocksData from "../rocksData";
+// import rocksData from "../rocksData";
 
 
 export default function RockNewForm() {
