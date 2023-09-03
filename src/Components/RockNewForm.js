@@ -1,6 +1,8 @@
 // TODO: http://localhost:3000/rocks/new-> shows new form for user to add a rock;needs work
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import rocksData from "../rocksData";
+
 
 export default function RockNewForm() {
   let navigate = useNavigate();
@@ -17,14 +19,29 @@ export default function RockNewForm() {
 
   // similiar to PUT async/await fetch method in edit forms but for POST/add a rock feature
   const newAddedRock = async (addedRock) => {
-    const result = await fetch(`http://localhost:7777/rocks/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(addedRock),
-    });
-    if (result.ok) {
-      navigate(`/rocks`);
+    try {
+      const result = await fetch(`http://localhost:7777/rocks/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(addedRock),
+      });
+      if (result.ok) {
+        navigate(`/rocks`);
+      } else {
+        console.error("Error adding rock on the server:", result.status);
+        rocksData(newAddedRock);
+      }
+    } catch (error) {
+      console.error("Error adding rock - no backend present", error);
+      rocksData(addedRock);
     }
+  };
+
+  const rocksData = (addedRock) => {
+    const newRockId = Math.max(...rocksData.map((rock) => rock.id)) + 1;
+    const newRockData = { id: newRockId, ...addedRock };
+    rocksData.push(newRockData);
+    navigate("/rocks");
   };
   const handleRockTextChange = (event) => {
     setNewRock({ ...newRock, [event.target.id]: event.target.value });
@@ -94,12 +111,15 @@ export default function RockNewForm() {
           placeholder="Is the rock dull or not?...."
         />
         <label htmlFor="hardness">Hard = 🪨 OR Soft = ☁️ :</label>
-        <select id="hardness" value={newRock} onChange={handleHardnessCheckboxChange}>
-         
+        <select
+          id="hardness"
+          value={newRock}
+          onChange={handleHardnessCheckboxChange}
+        >
           <option value="Hard">🪨</option>
           <option value="Soft">☁️</option>
         </select>
-       
+
         <br />
         <input type="submit" />
       </form>
